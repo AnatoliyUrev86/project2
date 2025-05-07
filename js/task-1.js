@@ -39,12 +39,19 @@
 // Класи використовуються якщо нам потрібно створити багато однотипних об'єктів
 
 class Car {
-  constructor(brend) {
+  // Ключі наших  об'єктів ми під час створення  constructor ми як параметри їх додаємо
+  // через літерал об'єкта тобто в середині фігурних дужок { brand, modal, price }
+  constructor({ brand, modal, price }) {
+    //   brend- конструктор приймає всі данні під час виклику
     //  constructor - під час свого виклику коли створюється екземпляр класу  new Car він беде
     // посилатися на ново створений об'єкт audi який записаний у змінній
-    console.log(brend);
+    // console.log(brend);
     // this.brend - після this назва може бути довільна в нашому випадку brend
-    this.brend = brend;
+    this.brand = brand;
+    //   Тут ми звертаємось до наших об'єктів через this.modal і присвоюємо значення  modal
+    this.modal = modal;
+    //    //   Тут ми звертаємось до наших об'єктів через this.price і присвоюємо значення  price
+    this.price = price;
   }
 }
 
@@ -52,12 +59,16 @@ class Car {
 // new Car() - буде створений новий екземпляр класу
 // Коли ми створюємо новий екземпляр класу автоматично запускаєтьмя метод  constructor і хоча як параметр
 // ми передали у  constructor data але у консолі ми бачимо наші рядки  "audi" та "bmw"
-const audi = new Car("audi");
+// const audi = new Car("audi");
 // audi constructor - конструктор буде посилатися на них під час виклику
-const bmw = new Car("bmw");
+// const bmw = new Car("bmw");
 // bmw constructor - конструктор буде посилатися на них під час виклику
 
 // "audi" "bmw" - передаються аргументи які під час виклику попадуть в наш об'єкт
+//  Коли ми створюємо новий екземпляр класу ми можемо в середину додавати об'єкти
+//                     ключ  значення вкладаємо в літерал об'єкта
+const audi = new Car({ brand: "audi", model: "Q7", price: 70000 });
+const bmw = new Car({ brand: "bmw", model: "X5", price: 65000 });
 
 console.log("audi", audi);
 console.log("bmw", bmw);
